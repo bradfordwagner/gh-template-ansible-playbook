@@ -22,7 +22,7 @@ spec:
       - name: upstream_repo
         value: quay.io/bradfordwagner/ansible
       - name: upstream_tag
-        value: 3.6.0
+        value: 3.6.1
     dag:
       tasks:
       - name: ansible
@@ -87,5 +87,4 @@ spec:
                 {"platform": "linux/amd64", "ansible_extra_args": ""},
               ]
             }
-
 
