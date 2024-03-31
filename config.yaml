@@ -1,4 +1,5 @@
 # created by init task for use with github actons
+target_repo: ghcr.io/bradfordwagner/test
 upstream:
   repo: ghcr.io/bradfordwagner/ansible
   tag: 5.1.2
