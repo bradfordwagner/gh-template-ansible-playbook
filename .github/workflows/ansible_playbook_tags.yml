@@ -10,6 +10,14 @@ jobs:
     name: debian_bookworm-slim,linux/amd64
     runs-on: ubuntu-latest
     steps:
+      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
+      - uses: chrisdickinson/setup-yq@v1.0.1
+        name: yq=v4.43.1
+        with:
+          yq-version: v4.43.1
+      - name: yq=version
+        run: yq --version
+      
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
@@ -25,14 +33,6 @@ jobs:
           path: taskfiles
           repository: bradfordwagner/taskfiles
           ref: feature/arm
-      
-      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
-      - uses: chrisdickinson/setup-yq@v1.0.1
-        name: yq=v4.43.1
-        with:
-          yq-version: v4.43.1
-      - name: yq=version
-        run: yq --version
       
       - uses: docker/login-action@v3
         name: login=ghcr.io
@@ -56,6 +56,14 @@ jobs:
     name: debian_bookworm-slim,linux/arm64
     runs-on: arm64
     steps:
+      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
+      - uses: chrisdickinson/setup-yq@v1.0.1
+        name: yq=v4.43.1
+        with:
+          yq-version: v4.43.1
+      - name: yq=version
+        run: yq --version
+      
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
@@ -71,14 +79,6 @@ jobs:
           path: taskfiles
           repository: bradfordwagner/taskfiles
           ref: feature/arm
-      
-      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
-      - uses: chrisdickinson/setup-yq@v1.0.1
-        name: yq=v4.43.1
-        with:
-          yq-version: v4.43.1
-      - name: yq=version
-        run: yq --version
       
       - uses: docker/login-action@v3
         name: login=ghcr.io
