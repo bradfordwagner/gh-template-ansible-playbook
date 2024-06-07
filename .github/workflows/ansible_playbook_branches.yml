@@ -3,26 +3,6 @@ on:
   - push
   - workflow_dispatch
 jobs:
-  config-yaml:
-    name: config.yaml
-    runs-on: ubuntu-latest
-    outputs:
-      config: ${{ steps.config.outputs.config }}
-    steps:
-      - uses: actions/checkout@v4
-      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
-      - uses: chrisdickinson/setup-yq@v1.0.1
-        name: yq=v4.43.1
-        with:
-          yq-version: v4.43.1
-      - name: jq=1.7
-        uses: dcarbone/install-jq-action@v2
-        with:
-          version: 1.7
-      - name: export=config
-        id: config
-        run: echo "config=$(yq -oj '.' config.yaml | jq -cr)" >> $GITHUB_OUTPUT
-  
   # run build
   build-debian_bookworm-slim-amd64:
     name: debian_bookworm-slim,amd64
