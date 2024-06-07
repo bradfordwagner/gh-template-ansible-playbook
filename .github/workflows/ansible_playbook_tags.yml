@@ -22,10 +22,15 @@ jobs:
           path: taskfiles
           repository: bradfordwagner/taskfiles
           ref: feature/arm
-      - name: test
-        run: echo "test"
-      - name: check for docker
-        run: which docker
+      - name: task=tags
+        run: |
+          build='{"os":"debian_bookworm-slim","platforms":["linux/amd64","linux/arm64"]}'
+          task -t ./taskfiles/tasks/containers/ansible.yml \
+            build \
+            build=${build} \
+            platform=linux/amd64 \
+            target_tag=${{ github.ref_name }} \
+            is_tag=true
   # end - build-debian_bookworm-slim-linux/amd64
   # begin - build-debian_bookworm-slim-linux/arm64
   a98a0e548a6229f57214d52c4bf203d5b7ec85e46d4b8c9f979700d29c7319d91:
@@ -44,10 +49,15 @@ jobs:
           path: taskfiles
           repository: bradfordwagner/taskfiles
           ref: feature/arm
-      - name: test
-        run: echo "test"
-      - name: check for docker
-        run: which docker
+      - name: task=tags
+        run: |
+          build='{"os":"debian_bookworm-slim","platforms":["linux/amd64","linux/arm64"]}'
+          task -t ./taskfiles/tasks/containers/ansible.yml \
+            build \
+            build=${build} \
+            platform=linux/arm64 \
+            target_tag=${{ github.ref_name }} \
+            is_tag=true
   # end - build-debian_bookworm-slim-linux/arm64
   ## manifest tool ###############################################
   # begin - manifest-debian_bookworm-slim
