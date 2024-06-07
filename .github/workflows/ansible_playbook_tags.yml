@@ -7,7 +7,7 @@ jobs:
   # run build
   # requires first character to be a letter
   # use sha256 of build os and platform
-  ae0b02b9018cd145833ab0a64bdc468179222efd52862838ba3f25c8ec5316a28:
+  aef1e3e5895d14adccfebb804f6c2f8bc704d2d346cc0d797675b16f86722f97d:
     name: alpine_3.18,linux/amd64
     runs-on: ubuntu-latest
     steps:
@@ -15,7 +15,7 @@ jobs:
         run: echo "test"
   # requires first character to be a letter
   # use sha256 of build os and platform
-  a9d37600b864a7db677838adaf2b1e7f2e878419aa56c2b54e66bca69fbb2c3a5:
+  a8e50f28b87529867e094666995e8f7cd143badc19ac5df19b35bccdbfac208a4:
     name: alpine_3.18,linux/arm64
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +23,7 @@ jobs:
         run: echo "test"
   # requires first character to be a letter
   # use sha256 of build os and platform
-  a443fbd6e8e9747d694f4eeed7459c72beb61f27a7657e1b29072637d4f723c49:
+  a244d78324ff2408b74f026c5b01d206e00c4d28e75bf26bb2692a63f008ed982:
     name: debian_bookworm-slim,linux/amd64
     runs-on: ubuntu-latest
     steps:
@@ -31,36 +31,36 @@ jobs:
         run: echo "test"
   # requires first character to be a letter
   # use sha256 of build os and platform
-  a75561c686337db41b84876dc4e4f92f63e56f30b98a8c4c6b9cfe2af82c59828:
+  a98a0e548a6229f57214d52c4bf203d5b7ec85e46d4b8c9f979700d29c7319d91:
     name: debian_bookworm-slim,linux/arm64
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test"
   # await completions and use manifest tool to stitch together
-  manifest-alpine_3.18:
+  a3f81e606d5902da8fe2af62e850773377b9e4b2bcff71f9a835f3e0cbd1a23da:
     name: alpine_3.18
     runs-on: ubuntu-latest
     needs:
       # requires first character to be a letter
       # use sha256 of build os and platform
-      - ae0b02b9018cd145833ab0a64bdc468179222efd52862838ba3f25c8ec5316a28
+      - aef1e3e5895d14adccfebb804f6c2f8bc704d2d346cc0d797675b16f86722f97d
       # requires first character to be a letter
       # use sha256 of build os and platform
-      - a9d37600b864a7db677838adaf2b1e7f2e878419aa56c2b54e66bca69fbb2c3a5
+      - a8e50f28b87529867e094666995e8f7cd143badc19ac5df19b35bccdbfac208a4
     steps:
       - name: test
         run: echo "test"
-  manifest-debian_bookworm-slim:
+  a7a8cbed9d9a2e94fb56e35155cc8fe61fbc1f6c89357b7eb10b509068e63acec:
     name: debian_bookworm-slim
     runs-on: ubuntu-latest
     needs:
       # requires first character to be a letter
       # use sha256 of build os and platform
-      - a443fbd6e8e9747d694f4eeed7459c72beb61f27a7657e1b29072637d4f723c49
+      - a244d78324ff2408b74f026c5b01d206e00c4d28e75bf26bb2692a63f008ed982
       # requires first character to be a letter
       # use sha256 of build os and platform
-      - a75561c686337db41b84876dc4e4f92f63e56f30b98a8c4c6b9cfe2af82c59828
+      - a98a0e548a6229f57214d52c4bf203d5b7ec85e46d4b8c9f979700d29c7319d91
     steps:
       - name: test
         run: echo "test"
