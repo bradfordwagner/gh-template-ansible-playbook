@@ -10,6 +10,18 @@ jobs:
     name: debian_bookworm-slim,linux/amd64
     runs-on: ubuntu-latest
     steps:
+      - name: checkout=self
+        uses: actions/checkout@v4
+      - name: task=3.35.1
+        uses: pnorton5432/setup-task@v1
+        with:
+          task-version: 3.35.1
+      - name: checkout=taskfiles@main
+        uses: actions/checkout@v4
+        with:
+          path: taskfiles
+          repository: bradfordwagner/taskfiles
+          ref: main
       - name: test
         run: echo "test"
   # end - build-debian_bookworm-slim-linux/amd64
@@ -18,6 +30,18 @@ jobs:
     name: debian_bookworm-slim,linux/arm64
     runs-on: arm64
     steps:
+      - name: checkout=self
+        uses: actions/checkout@v4
+      - name: task=3.35.1
+        uses: pnorton5432/setup-task@v1
+        with:
+          task-version: 3.35.1
+      - name: checkout=taskfiles@main
+        uses: actions/checkout@v4
+        with:
+          path: taskfiles
+          repository: bradfordwagner/taskfiles
+          ref: main
       - name: test
         run: echo "test"
   # end - build-debian_bookworm-slim-linux/arm64
