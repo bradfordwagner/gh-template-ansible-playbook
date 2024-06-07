@@ -5,26 +5,26 @@ on:
       - '*'
 jobs:
   # run build
-  build-alpine_3.18-amd64:
-    name: alpine_3.18,amd64
+  e0b02b9018cd145833ab0a64bdc468179222efd52862838ba3f25c8ec5316a28:
+    name: alpine_3.18,linux/amd64
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test"
-  build-alpine_3.18-arm64:
-    name: alpine_3.18,arm64
+  9d37600b864a7db677838adaf2b1e7f2e878419aa56c2b54e66bca69fbb2c3a5:
+    name: alpine_3.18,linux/arm64
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test"
-  build-debian_bookworm-slim-amd64:
-    name: debian_bookworm-slim,amd64
+  443fbd6e8e9747d694f4eeed7459c72beb61f27a7657e1b29072637d4f723c49:
+    name: debian_bookworm-slim,linux/amd64
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test"
-  build-debian_bookworm-slim-arm64:
-    name: debian_bookworm-slim,arm64
+  75561c686337db41b84876dc4e4f92f63e56f30b98a8c4c6b9cfe2af82c59828:
+    name: debian_bookworm-slim,linux/arm64
     runs-on: ubuntu-latest
     steps:
       - name: test
@@ -34,8 +34,8 @@ jobs:
     name: alpine_3.18
     runs-on: ubuntu-latest
     needs:
-      - build-alpine_3.18-amd64
-      - build-alpine_3.18-arm64
+      - e0b02b9018cd145833ab0a64bdc468179222efd52862838ba3f25c8ec5316a28
+      - 9d37600b864a7db677838adaf2b1e7f2e878419aa56c2b54e66bca69fbb2c3a5
     steps:
       - name: test
         run: echo "test"
@@ -43,8 +43,8 @@ jobs:
     name: debian_bookworm-slim
     runs-on: ubuntu-latest
     needs:
-      - build-debian_bookworm-slim-amd64
-      - build-debian_bookworm-slim-arm64
+      - 443fbd6e8e9747d694f4eeed7459c72beb61f27a7657e1b29072637d4f723c49
+      - 75561c686337db41b84876dc4e4f92f63e56f30b98a8c4c6b9cfe2af82c59828
     steps:
       - name: test
         run: echo "test"
