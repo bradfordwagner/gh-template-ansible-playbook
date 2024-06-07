@@ -3,24 +3,25 @@ on:
   - push
   - workflow_dispatch
 jobs:
-  # run build
-  # requires first character to be a letter
-  # use sha256 of build os and platform
+  ## run build ###################################################
+  # begin - build-debian_bookworm-slim-linux/amd64
   a244d78324ff2408b74f026c5b01d206e00c4d28e75bf26bb2692a63f008ed982:
     name: debian_bookworm-slim,linux/amd64
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test"
-  # requires first character to be a letter
-  # use sha256 of build os and platform
+  # end - build-debian_bookworm-slim-linux/amd64
+  # begin - build-debian_bookworm-slim-linux/arm64
   a98a0e548a6229f57214d52c4bf203d5b7ec85e46d4b8c9f979700d29c7319d91:
     name: debian_bookworm-slim,linux/arm64
     runs-on: arm64
     steps:
       - name: test
         run: echo "test"
-  # await completions and use manifest tool to stitch together
+  # end - build-debian_bookworm-slim-linux/arm64
+  ## manifest tool ###############################################
+  # begin - manifest-debian_bookworm-slim
   a7a8cbed9d9a2e94fb56e35155cc8fe61fbc1f6c89357b7eb10b509068e63acec:
     name: debian_bookworm-slim
     runs-on: ubuntu-latest
@@ -34,3 +35,4 @@ jobs:
     steps:
       - name: test
         run: echo "test"
+  # end - manifest-debian_bookworm-slim
