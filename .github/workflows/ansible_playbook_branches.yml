@@ -24,13 +24,13 @@ jobs:
         run: echo "config=$(yq -oj '.' config.yaml | jq -cr)" >> $GITHUB_OUTPUT
   
   debian_bookworm-slim-amd64:
-    name: debian_bookworm-slim-amd64
+    name: debian_bookworm-slim,amd64
     runs-on: ubuntu-latest
     steps:
       - name: test
         run: echo "test"
   debian_bookworm-slim-arm64:
-    name: debian_bookworm-slim-arm64
+    name: debian_bookworm-slim,arm64
     runs-on: ubuntu-latest
     steps:
       - name: test
