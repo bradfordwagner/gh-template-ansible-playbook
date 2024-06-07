@@ -20,7 +20,7 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: arduino/setup-task@v1
+        uses: arduino/setup-task@v2
         with:
           version: 3.35.1
           repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -66,7 +66,7 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: arduino/setup-task@v1
+        uses: arduino/setup-task@v2
         with:
           version: 3.35.1
           repo-token: ${{ secrets.GITHUB_TOKEN }}
