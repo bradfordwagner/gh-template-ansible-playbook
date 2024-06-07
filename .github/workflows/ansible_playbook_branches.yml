@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        run: echo "test" && sleep 15
+        run: echo "test" && exit 1
   # await completions and use manifest tool to stitch together
   a3f81e606d5902da8fe2af62e850773377b9e4b2bcff71f9a835f3e0cbd1a23da:
     name: alpine_3.18
