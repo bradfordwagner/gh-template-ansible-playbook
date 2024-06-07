@@ -24,10 +24,6 @@ jobs:
         run: |
           sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
           export PATH=$(pwd)/bin:$PATH
-        # uses: arduino/setup-task@v2
-        # with:
-        #   version: 3.35.1
-        #   repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: task=version
         run: ./bin/task --version
       - name: checkout=taskfiles@feature/arm
@@ -47,7 +43,7 @@ jobs:
       - name: task=tags
         run: |
           build='{"os":"debian_bookworm-slim","platforms":["linux/amd64","linux/arm64"]}'
-          task -t ./taskfiles/tasks/containers/ansible.yml \
+          ./bin/task -t ./taskfiles/tasks/containers/ansible.yml \
             build \
             build=${build} \
             platform=linux/amd64 \
@@ -73,10 +69,6 @@ jobs:
         run: |
           sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
           export PATH=$(pwd)/bin:$PATH
-        # uses: arduino/setup-task@v2
-        # with:
-        #   version: 3.35.1
-        #   repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: task=version
         run: ./bin/task --version
       - name: checkout=taskfiles@feature/arm
@@ -96,7 +88,7 @@ jobs:
       - name: task=tags
         run: |
           build='{"os":"debian_bookworm-slim","platforms":["linux/amd64","linux/arm64"]}'
-          task -t ./taskfiles/tasks/containers/ansible.yml \
+          ./bin/task -t ./taskfiles/tasks/containers/ansible.yml \
             build \
             build=${build} \
             platform=linux/arm64 \
