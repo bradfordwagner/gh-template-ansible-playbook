@@ -12,9 +12,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -52,9 +53,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -92,9 +94,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -132,9 +135,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -172,9 +176,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -212,9 +217,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -252,9 +258,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -292,9 +299,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -332,9 +340,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -372,9 +381,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -412,9 +422,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -452,9 +463,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -492,9 +504,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -532,9 +545,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -572,9 +586,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -612,9 +627,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -652,9 +668,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -692,9 +709,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -732,9 +750,10 @@ jobs:
       - name: checkout=self
         uses: actions/checkout@v4
       - name: task=3.35.1
-        uses: pnorton5432/setup-task@v1
+        uses: arduino/setup-task@v1
         with:
-          task-version: 3.35.1
+          version: 3.35.1
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
