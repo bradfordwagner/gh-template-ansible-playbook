@@ -16,14 +16,16 @@ jobs:
         uses: pnorton5432/setup-task@v1
         with:
           task-version: 3.35.1
-      - name: checkout=taskfiles@main
+      - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
           path: taskfiles
           repository: bradfordwagner/taskfiles
-          ref: main
+          ref: feature/arm
       - name: test
         run: echo "test"
+      - name: check for docker
+        run: which docker
   # end - build-debian_bookworm-slim-linux/amd64
   # begin - build-debian_bookworm-slim-linux/arm64
   a98a0e548a6229f57214d52c4bf203d5b7ec85e46d4b8c9f979700d29c7319d91:
@@ -36,14 +38,16 @@ jobs:
         uses: pnorton5432/setup-task@v1
         with:
           task-version: 3.35.1
-      - name: checkout=taskfiles@main
+      - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
           path: taskfiles
           repository: bradfordwagner/taskfiles
-          ref: main
+          ref: feature/arm
       - name: test
         run: echo "test"
+      - name: check for docker
+        run: which docker
   # end - build-debian_bookworm-slim-linux/arm64
   ## manifest tool ###############################################
   # begin - manifest-debian_bookworm-slim
