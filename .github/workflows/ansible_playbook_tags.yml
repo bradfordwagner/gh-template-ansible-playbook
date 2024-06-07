@@ -17,6 +17,8 @@ jobs:
         with:
           version: 3.35.1
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: test=task
+        run: task --version
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
@@ -58,6 +60,8 @@ jobs:
         with:
           version: 3.35.1
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: test=task
+        run: task --version
       - name: checkout=taskfiles@feature/arm
         uses: actions/checkout@v4
         with:
