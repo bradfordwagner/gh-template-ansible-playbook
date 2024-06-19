@@ -58,7 +58,11 @@ jobs:
           yq-version: v4.43.1
       - name: yq=version
         run: yq --version
-      - name: task=branches
+      
+      - name: jq=1.7
+        uses: dcarbone/install-jq-action@v2
+        with:
+          version: 1.7- name: task=branches
         run: |
           build=$(echo '${{ toJson(matrix.build) }}'  | jq -rc '.')
           ./bin/task -t ./taskfiles/tasks/containers/ansible.yml \
