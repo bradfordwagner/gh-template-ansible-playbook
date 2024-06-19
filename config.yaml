@@ -19,12 +19,6 @@ builds:
   - os: archlinux_latest
     arch: linux/amd64
     runs_on: ubuntu-latest
-  - os: debian_bullseye
-    arch: linux/amd64
-    runs_on: ubuntu-latest
-  - os: debian_bullseye
-    arch: linux/arm64
-    runs_on: arm64
   - os: debian_bookworm-slim
     arch: linux/amd64
     runs_on: ubuntu-latest
