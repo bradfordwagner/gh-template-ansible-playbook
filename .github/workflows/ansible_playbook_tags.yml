@@ -51,6 +51,14 @@ jobs:
           path: taskfiles
           repository: bradfordwagner/taskfiles
           ref: feature/arm
+      
+      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
+      - uses: chrisdickinson/setup-yq@v1.0.1
+        name: yq=v4.43.1
+        with:
+          yq-version: v4.43.1
+      - name: yq=version
+        run: yq --version
       - name: task=tags
         run: |
           build=$(echo '${{ toJson(matrix.build) }}'  | jq -rc '.')
