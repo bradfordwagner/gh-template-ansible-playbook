@@ -53,7 +53,7 @@ jobs:
       - name: task=branches
         run: |
           build=$(echo '${{ toJson(matrix.build) }}'  | jq -rc '.')
-          task -t ./taskfiles/tasks/containers/ansible.yml \
+          ./bin/task -t ./taskfiles/tasks/containers/ansible.yml \
             build \
             build=${build} \
             target_tag=latest \
