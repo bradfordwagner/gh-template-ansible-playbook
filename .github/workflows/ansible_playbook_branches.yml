@@ -94,19 +94,3 @@ jobs:
             target_tag=latest \
             is_tag=false
   # end - build-alpine_3.18-linux/arm64
-  ## manifest tool ###############################################
-  # begin - manifest-alpine_3.18
-  a3f81e606d5902da8fe2af62e850773377b9e4b2bcff71f9a835f3e0cbd1a23da:
-    name: alpine_3.18
-    runs-on: ubuntu-latest
-    needs:
-      # requires first character to be a letter
-      # use sha256 of build os and platform
-      - aef1e3e5895d14adccfebb804f6c2f8bc704d2d346cc0d797675b16f86722f97d
-      # requires first character to be a letter
-      # use sha256 of build os and platform
-      - a8e50f28b87529867e094666995e8f7cd143badc19ac5df19b35bccdbfac208a4
-    steps:
-      - name: test
-        run: echo "test"
-  # end - manifest-alpine_3.18
