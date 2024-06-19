@@ -30,8 +30,6 @@ jobs:
   matrix-builds:
     name: ${{ matrix.build.os }}-${{ matrix.build.arch }}
     permissions: write-all
-    # runs-on: ${{ matrix.runner }}
-    # runs-on: ubuntu-latest
     runs-on: ${{ matrix.build.runs_on }}
     needs: config-yaml
     strategy:
