@@ -29,7 +29,8 @@ jobs:
   branches:
     name: ${{ matrix.build.os }}
     permissions: write-all
-    runs-on: ubuntu-latest
+    runs-on: arm64
+    # runs-on: ubuntu-latest
     needs: config-yaml
     strategy:
       fail-fast: false
