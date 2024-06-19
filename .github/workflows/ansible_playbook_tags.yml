@@ -79,5 +79,5 @@ jobs:
             username: ${{ github.actor }}
             password: ${{ github.token }}
             platforms: linux/amd64,linux/arm64
-            template: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:$${{ github.ref_name }}-ARCH
-            target: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:$${{ github.ref_name }}
+            template: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:${{ github.ref_name }}-ARCH
+            target: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:${{ github.ref_name }}
