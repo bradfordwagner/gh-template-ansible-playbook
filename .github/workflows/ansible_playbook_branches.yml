@@ -26,18 +26,17 @@ jobs:
         id: config
         run: echo "config=$(yq -oj '.' config.yaml | jq -cr)" >> $GITHUB_OUTPUT
   
-  branches:
+  matrix-builds:
     name: ${{ matrix.build.os }}-${{ matrix.runner }}
     permissions: write-all
-    runs-on: ${{ matrix.runner }}
+    # runs-on: ${{ matrix.runner }}
     # runs-on: ubuntu-latest
-    if: ${{ contains(matrix.build.platforms, "linux/arm64") }}
+    runs-on: ${{ contains(matrix.build.arch, "linux/arm64") && "arm64" || "ubuntu-latest" }}
     needs: config-yaml
     strategy:
       fail-fast: false
       matrix:
         build: ${{ fromJSON(needs.config-yaml.outputs.config).builds }}
-        runner: [arm64, ubuntu-latest]
     steps:
       - name: checkout=self
         uses: actions/checkout@v4
