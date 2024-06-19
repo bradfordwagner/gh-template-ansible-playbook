@@ -6,7 +6,7 @@ on:
 jobs:
   config-yaml:
     name: config.yaml
-    runs-on: ubuntu-latest
+    runs-on: [arm64,ubuntu-latest]
     outputs:
       config: ${{ steps.config.outputs.config }}
     steps:
@@ -30,7 +30,7 @@ jobs:
   tags:
     name: ${{ matrix.build.os }}
     permissions: write-all
-    runs-on: [arm64,ubuntu-latest]
+    runs-on: arm64
     # runs-on: ubuntu-latest
     needs: config-yaml
     strategy:
