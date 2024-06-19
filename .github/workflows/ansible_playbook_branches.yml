@@ -5,7 +5,7 @@ on:
 jobs:
   config-yaml:
     name: config.yaml
-    runs-on: [arm64,ubuntu-latest]
+    runs-on: arm64
     outputs:
       config: ${{ steps.config.outputs.config }}
     steps:
