@@ -27,7 +27,7 @@ jobs:
         run: echo "config=$(yq -oj '.' config.yaml | jq -cr)" >> $GITHUB_OUTPUT
   
   matrix-builds:
-    name: ${{ matrix.build.os }}-${{ matrix.runner }}
+    name: ${{ matrix.build.os }}-${{ matrix.build.arch }}
     permissions: write-all
     # runs-on: ${{ matrix.runner }}
     # runs-on: ubuntu-latest
