@@ -3,12 +3,13 @@ on:
   - push
   - workflow_dispatch
 jobs:
-  ## run build ###################################################
-  # begin - build-alpine_3.18-linux/amd64
-  aef1e3e5895d14adccfebb804f6c2f8bc704d2d346cc0d797675b16f86722f97d:
-    name: alpine_3.18,linux/amd64
+  config-yaml:
+    name: config.yaml
     runs-on: ubuntu-latest
+    outputs:
+      config: ${{ steps.config.outputs.config }}
     steps:
+      - uses: actions/checkout@v4
       # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
       - uses: chrisdickinson/setup-yq@v1.0.1
         name: yq=v4.43.1
@@ -17,80 +18,11 @@ jobs:
       - name: yq=version
         run: yq --version
       
-      - name: checkout=self
-        uses: actions/checkout@v4
-      - name: task=3.35.1
-        run: |
-          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
-          export PATH=$(pwd)/bin:$PATH
-      - name: task=version
-        run: ./bin/task --version
-      - name: checkout=taskfiles@feature/arm
-        uses: actions/checkout@v4
+      - name: jq=1.7
+        uses: dcarbone/install-jq-action@v2
         with:
-          path: taskfiles
-          repository: bradfordwagner/taskfiles
-          ref: feature/arm
-      
-      - uses: docker/login-action@v3
-        name: login=ghcr.io
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-      
-      - name: task=branches
-        run: |
-          build='{"os":"alpine_3.18","platforms":["linux/amd64","linux/arm64"]}'
-          ./bin/task -t ./taskfiles/tasks/containers/ansible.yml \
-            build \
-            build=${build} \
-            platform=linux/amd64 \
-            target_tag=latest \
-            is_tag=false
-  # end - build-alpine_3.18-linux/amd64
-  # begin - build-alpine_3.18-linux/arm64
-  a8e50f28b87529867e094666995e8f7cd143badc19ac5df19b35bccdbfac208a4:
-    name: alpine_3.18,linux/arm64
-    runs-on: arm64
-    steps:
-      # https://github.com/chrisdickinson/setup-yq/blob/latest/action.yml
-      - uses: chrisdickinson/setup-yq@v1.0.1
-        name: yq=v4.43.1
-        with:
-          yq-version: v4.43.1
-      - name: yq=version
-        run: yq --version
-      
-      - name: checkout=self
-        uses: actions/checkout@v4
-      - name: task=3.35.1
-        run: |
-          sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
-          export PATH=$(pwd)/bin:$PATH
-      - name: task=version
-        run: ./bin/task --version
-      - name: checkout=taskfiles@feature/arm
-        uses: actions/checkout@v4
-        with:
-          path: taskfiles
-          repository: bradfordwagner/taskfiles
-          ref: feature/arm
-      
-      - uses: docker/login-action@v3
-        name: login=ghcr.io
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
-      
-      - name: task=branches
-        run: |
-          build='{"os":"alpine_3.18","platforms":["linux/amd64","linux/arm64"]}'
-          ./bin/task -t ./taskfiles/tasks/containers/ansible.yml \
-            build \
-            build=${build} \
-            platform=linux/arm64 \
-            target_tag=latest \
-            is_tag=false
-  # end - build-alpine_3.18-linux/arm64
+          version: 1.7
+      - name: export=config
+        id: config
+        run: echo "config=$(yq -oj '.' config.yaml | jq -cr)" >> $GITHUB_OUTPUT
+  
