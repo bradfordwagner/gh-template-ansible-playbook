@@ -74,6 +74,7 @@ jobs:
             target_tag=${{ github.ref_name }} \
             is_tag=true
       - name: Push manifest
+        continue-on-error: true
         uses: pixelfederation/gh-action-manifest-tool@v0.1.7
         with:
           username: ${{ github.actor }}
