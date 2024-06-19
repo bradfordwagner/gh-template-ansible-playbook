@@ -72,11 +72,11 @@ jobs:
             build=${build} \
             target_tag=latest \
             is_tag=false
-        # - name: Push manifest
-        #   uses: pixelfederation/gh-action-manifest-tool@v0.1.7
-        #   with:
-        #     username: ${{ github.actor }}
-        #     password: ${{ github.token }}
-        #     platforms: linux/amd64,linux/arm64
-        #     template: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:latest-ARCH
-        #     target: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:latest
+      - name: Push manifest
+        uses: pixelfederation/gh-action-manifest-tool@v0.1.7
+        with:
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+          platforms: linux/amd64,linux/arm64
+          template: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:latest-ARCH
+          target: ${{ fromJSON(needs.config-yaml.outputs.config).target_repo }}:latest
