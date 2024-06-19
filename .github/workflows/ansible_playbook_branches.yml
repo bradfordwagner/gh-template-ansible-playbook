@@ -72,7 +72,6 @@ jobs:
             build=${build} \
             target_tag=latest \
             is_tag=false
-      manifest_tool_steps: |
         - name: Push manifest
           uses: pixelfederation/gh-action-manifest-tool@v0.1.7
           with:
