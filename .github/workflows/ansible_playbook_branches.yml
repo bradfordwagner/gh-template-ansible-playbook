@@ -31,7 +31,7 @@ jobs:
     permissions: write-all
     # runs-on: ${{ matrix.runner }}
     # runs-on: ubuntu-latest
-    runs-on: ${{ contains(matrix.build.arch, "linux/arm64") && "arm64" || "ubuntu-latest" }}
+    runs-on: ${{ matrix.build.arch == "linux/arm64" && "arm64" || "ubuntu-latest" }}
     needs: config-yaml
     strategy:
       fail-fast: false
