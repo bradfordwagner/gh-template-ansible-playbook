@@ -6,9 +6,10 @@ upstream:
 builds:
   - os: alpine_3.18
     arch: linux/amd64
-    runs_on: arm64
+    runs_on: ubuntu-latest
   - os: alpine_3.18
     arch: linux/arm64
+    runs_on: arm64
   # - os: alpine_3.19
   #   platforms: [linux/amd64, linux/arm64]
   # - os: archlinux_latest
