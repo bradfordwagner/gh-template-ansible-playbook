@@ -23,6 +23,7 @@ jobs:
         uses: dcarbone/install-jq-action@v2
         with:
           version: 1.7
+      
       - name: export=config
         id: config
         run: echo "config=$(yq -oj '.' config.yaml | jq -cr)" >> $GITHUB_OUTPUT
@@ -59,6 +60,11 @@ jobs:
           yq-version: v4.43.1
       - name: yq=version
         run: yq --version
+      
+      - name: jq=1.7
+        uses: dcarbone/install-jq-action@v2
+        with:
+          version: 1.7
       - name: task=tags
         run: |
           build=$(echo '${{ toJson(matrix.build) }}'  | jq -rc '.')
