@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - '*'
+env:
+  version: ${{ github.ref_name }}
 jobs:
   product:
     name: product

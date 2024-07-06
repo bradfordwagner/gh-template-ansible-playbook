@@ -6,6 +6,8 @@ on:
     tags-ignore:
       - '**'
   workflow_dispatch: {}
+env:
+  version: latest
 jobs:
   product:
     name: product
