@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   vars:
-    jq_ver: 1.6
+    jq_ver: 1.7.1
   roles:
     - role: andrewrothstein.jq
   tasks:
