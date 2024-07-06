@@ -4,4 +4,8 @@
     jq_ver: 1.6
   roles:
     - role: andrewrothstein.jq
-
+  tasks:
+    - name: smoketest installed binaries are added to path
+      command: "{{ item }}"
+      loop:
+        - jq -h
