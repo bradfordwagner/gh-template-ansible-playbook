@@ -22,7 +22,7 @@ jobs:
         run: |
           # write your own scoped version of the following since  is not available at this base level
           # echo product=$(./bin/dagger -m  call product-json --src=. --version=${{ env.version }}) >> $GITHUB_OUTPUT
-          echo product=$(./bin/dagger -m %!s(<nil>) call product-json --src=. --version=${version}) >> $GITHUB_OUTPUT
+          echo product=$(./bin/dagger -m github.com/bradfordwagner/dagger-modules/ansible@feature/ansible call product-json --src=. --version=${version}) >> $GITHUB_OUTPUT
   matrix-builds:
     name: ${{ matrix.build.os }}-${{ matrix.build.arch }}
     permissions: write-all
