@@ -58,16 +58,16 @@ jobs:
             --version=${version} \
             --isDev=false \
             --flavor=playbook
-    
-    manifest:
-      runs-on: arm64
-      permissions: write-all
-      needs: builds
-      name: manifest-tool
-      env:
-        actor: ${{ github.actor }}
-        token: ${{ github.token }}
-      steps:
+  
+  manifest:
+    runs-on: arm64
+    permissions: write-all
+    needs: builds
+    name: manifest-tool
+    env:
+      actor: ${{ github.actor }}
+      token: ${{ github.token }}
+    steps:
       - uses: actions/checkout@v4
       - name: dagger=0.11.8
         run: |
@@ -86,11 +86,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ github.token }}
           logout: false
-        - name: dagger=manifest
-          id: config
-          run: |
-            ./bin/dagger -m github.com/bradfordwagner/dagger-modules/ansible@feature/ansible call manifest \
-              --src=. \
-              --version=${version} \
-              --actor=env:actor \
-              --token=env:token
+      - name: dagger=manifest
+        id: config
+        run: |
+          ./bin/dagger -m github.com/bradfordwagner/dagger-modules/ansible@feature/ansible call manifest \
+            --src=. \
+            --version=${version} \
+            --actor=env:actor \
+            --token=env:token

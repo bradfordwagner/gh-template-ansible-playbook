@@ -61,4 +61,4 @@ jobs:
             --version=${version} \
             --isDev=false \
             --flavor=playbook
-    
+  
