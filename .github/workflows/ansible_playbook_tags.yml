@@ -59,7 +59,6 @@ jobs:
             --version=${version} \
             --isDev=false \
             --flavor=playbook
-  
   manifest:
     runs-on: arm64
     permissions: write-all
